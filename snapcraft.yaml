@@ -34,3 +34,6 @@ parts:
     build-packages:
       - cpio
       - libssl-dev
+      - build-essential
+      - flex
+      - bison
