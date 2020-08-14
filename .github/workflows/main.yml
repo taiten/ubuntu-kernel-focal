@@ -17,5 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     # Runs a single command using the runners shell
-    - name: Start to sync 
+    steps:
+    - name: start sync
       run: git pull https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal
