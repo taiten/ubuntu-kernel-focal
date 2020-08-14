@@ -19,4 +19,4 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - name: start sync
-      run: git pull https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal
+      run: git pull git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal
