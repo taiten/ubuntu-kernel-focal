@@ -690,6 +690,9 @@ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p)
 	u32 *regs_buff = p;
 	int err = 0;
 
+	if (unlikely(!self->aq_hw_ops->hw_get_regs))
+		return -EOPNOTSUPP;
+
 	regs->version = 1;
 
 	err = self->aq_hw_ops->hw_get_regs(self->aq_hw,
@@ -704,6 +707,9 @@ err_exit:
 
 int aq_nic_get_regs_count(struct aq_nic_s *self)
 {
+	if (unlikely(!self->aq_hw_ops->hw_get_regs))
+		return 0;
+
 	return self->aq_nic_cfg.aq_hw_caps->mac_regs_count;
 }
 
@@ -926,11 +932,7 @@ struct aq_nic_cfg_s *aq_nic_get_cfg(struct aq_nic_s *self)
 
 u32 aq_nic_get_fw_version(struct aq_nic_s *self)
 {
-	u32 fw_version = 0U;
-
-	self->aq_hw_ops->hw_get_fw_version(self->aq_hw, &fw_version);
-
-	return fw_version;
+	return self->aq_hw_ops->hw_get_fw_version(self->aq_hw);
 }
 
 int aq_nic_stop(struct aq_nic_s *self)

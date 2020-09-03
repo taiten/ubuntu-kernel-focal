@@ -59,7 +59,6 @@ acenic
 acer-wireless
 acer-wmi
 acerhdf
-acp3x-rn
 acp_audio_dma
 acpi-als
 acpi_configfs
@@ -1991,7 +1990,6 @@ intel-ishtp-loader
 intel-lpss
 intel-lpss-acpi
 intel-lpss-pci
-intel-rapl-perf
 intel-rng
 intel-rst
 intel-smartconnect
@@ -3543,6 +3541,7 @@ raid6_pq
 raid_class
 rainshadow-cec
 ramoops
+rapl
 rave-sp
 rave-sp-backlight
 rave-sp-pwrbutton
@@ -4146,6 +4145,7 @@ snd
 snd-ac97-codec
 snd-acp3x-pcm-dma
 snd-acp3x-pdm-dma
+snd-acp3x-rn
 snd-ad1889
 snd-ak4113
 snd-ak4114
